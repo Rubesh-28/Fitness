@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Challenges</title>
+    {% load static %}
+    <link rel="icon" type="imag/x-icon" href="{% static 'Favi2.png' %}" sizes="100px">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        nav {
+            display: inline-block;
+            margin: 10px;
+        }
+        nav a {
+            color: #34e906;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: x-large;
+        }
+        section {
+            padding: 10px;
+        }
+        .week {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .day {
+            width: calc(100% / 7);
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            position: relative;
+            font-size: large;
+            box-sizing: border-box;
+            margin: 5px 0;
+            background-color: #ffffff;
+        }
+        .day h3 {
+            margin: 0;
+            color: #333333;
+        }
+        .day p {
+            font-family: Arial, sans-serif;
+            color: #777777;
+        }
+        footer {
+            background-color: #000000;
+            color: #34e906;
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+        .button-container {
+    text-align: center;
+    padding-top: 10px; 
+  }
+
+  .completed-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    height: 40px;
+  }
+
+  .completed-button.completed {
+    background-color: #2ecc71;
+  }
+        .sets {
+            color: red;
+        }
+        .social-icons a {
+            font-size: 30px;
+            color: #34e906;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #2ecc71;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="imag/x-icon" href="Favi2.png" sizes="100px">
+</head>
+<body>
+    <header>
+        <nav>
+            <a>Workout Plan</a>
+        </nav>
+    </header>
+
+    <section id="week1">
+        <h2>Week 1</h2>
+        <div class="week">
+            <div class="day">
+                <center>
+                    <p><strong>6 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>12</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>6 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>12</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>7 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>14</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>7 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="week2">
+        <h2>Week 2</h2>
+        <div class="week">
+            <div class="day">
+                <center>
+                    <p><strong>14</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>8 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>16</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>8 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>16</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>9 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>18</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="week3">
+        <h2>Week 3</h2>
+        <div class="week">
+            <div class="day">
+                <center>
+                    <p><strong>9 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>18</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>10 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>20</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>10 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>20</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>11 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="week4">
+        <h2>Week 4</h2>
+        <div class="week">
+            <div class="day">
+                <center>
+                    <p><strong>22</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>11 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>22</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>12 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>24</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>12 </strong> up & down planks</p>
+                    <p><strong>10-count</strong> plank hold</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+
+            <div class="day">
+                <center>
+                    <p><strong>24</strong></p>
+                    <p>Sitting Twists</p>
+                    <p><span class="sets">4 Sets</span> | 30 Sec Rest</p>
+                </center>
+                <div class="button-container">
+                    <button class="completed-button">Complete</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <nav>
+            <a>Contact The Creator</a>
+            <p></p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/rubesh-k-k-887b33280" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/___rubesh___?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+    </footer>
+
+    <script>
+        const completeButtons = document.querySelectorAll('.completed-button');
+        completeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.add('completed');
+                button.textContent = 'Completed';
+                button.disabled = true;
+            });
+        });
+    </script>
+</body>
+</html>

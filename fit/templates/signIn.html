@@ -1,0 +1,101 @@
+<!
+DOCTYPE html>
+<html>
+<head>
+    <title>Sign in</title>
+    {% load static %}
+    <link rel="icon" type="imag/x-icon" href="{% static 'Favi2.png' %}" sizes="100px">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(60deg, #71b7e6, #9b59b6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login {
+            width: 350px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            text-align: center;
+            color: #555;
+        }
+
+        label {
+            color: #777;
+            font-size: 17px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            height: 40px;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            padding: 0 15px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="text"]:valid,
+        input[type="password"]:valid {
+            border-color: #9b59b6;
+        }
+
+
+  #log {
+    width: 60%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    padding: 8px 15px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  #log:hover {
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+
+  button a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h2>Login Page</h2>
+        <form action="Challenges/" method="POST">
+            {% csrf_token %}
+            <label><b>User Name</b></label>
+            <input type="text" name="Uname" id="Uname" required>
+            <label><b>Password</b></label>
+            <input type="password" name="Pass" id="Pass" required>
+            <center><button type="button" name="log" id="log"> <a href="Challenges/">Log In Here</a></button></center>
+            <center><p>Not have account? <a href="SignUp/" style="text-decoration: none;">Sign Up</a></p></center>
+        </form>
+    </div>
+</body>
+</html>
