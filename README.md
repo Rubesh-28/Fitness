@@ -53,7 +53,7 @@ This is a Django-based web application designed to help users manage their fitne
     python manage.py runserver
     ```
 
-### Using Docker
+### Using Docker (Optional)
 1. **Build the Docker image:**
     ```bash
     docker-compose build
