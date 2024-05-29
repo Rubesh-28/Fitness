@@ -84,5 +84,5 @@ This is a Django-based web application designed to help users manage their fitne
 This project is licensed under the MIT License.
 
 ## Contact
-For any questions or suggestions, please open an issue or contact me at rubesh@example.com.
+For any questions or suggestions, please open an issue or contact me at rubeshkk28@gmail.com.
 
