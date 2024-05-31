@@ -105,8 +105,12 @@
     <header>
         <nav>
             <a>Workout Plan</a>
+            {% if username %}
+                <span style="float: right; margin-right: 20px; font-size: large; color: #34e906;">Hello, {{ username }}!</span>
+            {% endif %}
         </nav>
     </header>
+    
 
     <section id="week1">
         <h2>Week 1</h2>
