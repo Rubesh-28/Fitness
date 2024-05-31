@@ -1,10 +1,9 @@
-<!
-DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Sign in</title>
     {% load static %}
-    <link rel="icon" type="imag/x-icon" href="{% static 'Favi2.png' %}" sizes="100px">
+    <link rel="icon" type="image/x-icon" href="{% static 'Favi2.png' %}" sizes="100px">
     <style>
         body {
             padding: 0;
@@ -55,46 +54,43 @@ DOCTYPE html>
             border-color: #9b59b6;
         }
 
+        #log {
+            width: 60%;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            padding: 8px 15px;
+            display: inline-block;
+            text-align: center;
+        }
 
-  #log {
-    width: 60%;
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-    padding: 8px 15px;
-    display: inline-block;
-    text-align: center;
-  }
+        #log:hover {
+            background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+        }
 
-  #log:hover {
-    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
-  }
-
-  button a {
-    text-decoration: none;
-    color: #fff;
-  }
-
+        button a {
+            text-decoration: none;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <div class="login">
         <h2>Login Page</h2>
-        <form action="Challenges/" method="POST">
+        <form action="{% url 'Login' %}" method="POST">
             {% csrf_token %}
             <label><b>User Name</b></label>
             <input type="text" name="Uname" id="Uname" required>
             <label><b>Password</b></label>
             <input type="password" name="Pass" id="Pass" required>
-            <center><button type="button" name="log" id="log"> <a href="Challenges/">Log In Here</a></button></center>
-            <center><p>Not have account? <a href="SignUp/" style="text-decoration: none;">Sign Up</a></p></center>
+            <center><button type="submit" name="log" id="log">Log In Here</button></center>
         </form>
     </div>
 </body>
