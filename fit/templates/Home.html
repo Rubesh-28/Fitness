@@ -1,200 +1,204 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <title>Fit Quest</title>
-    {% load static %}
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/736x/f9/d8/9e/f9d89e3eb4aa16a73e83ee7dcd462c56.jpg">
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+<head>
+  <title>Fitness Hub</title>
+  {% load static %}
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="icon" type="image/x-icon" href="{% static 'Favi2.png' %}">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
 
-      ::selection {
-        color: #000;
-        background: #fff;
-      }
+    ::selection {
+      color: #000;
+      background: #fff;
+    }
 
-      nav {
-        position: fixed;
-        background-color: transparent;
-        width: 100%;
-        padding: 1px 0;
-        z-index: 12;
-      }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-      .menu {
-        max-width: 1250px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-      }
+    nav {
+      position: fixed;
+      width: 100%;
+      background:transparent;
+      z-index: 1000;
+      padding: 10px 0;
+      transition: background 0.3s;
+    }
 
-      .menu .logo a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 35px;
-        font-weight: 600;
-        position: relative;
-        left: -8em;
-      }
+    .menu {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+    }
 
-      .menu ul {
-        display: inline-flex;
-      }
+    .menu .logo a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 700;
+    }
 
-      .menu ul li {
-        list-style: none;
-        margin-left: 7px;
-      }
+    .menu ul {
+      display: flex;
+    }
 
-      .menu ul li:first-child {
-        margin-left: 0px;
-      }
+    .menu ul li {
+      list-style: none;
+      margin-left: 15px;
+    }
 
-      .menu ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 18px;
-        font-weight: 500;
-        padding: 8px 15px;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-      }
+    .menu ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
 
-      .menu ul li a:hover {
-        background: #fff;
-        color: black;
-      }
+    .menu ul li a:hover {
+      background: #fff;
+      color: black;
+    }
 
-      .img {
-        background: url("{% static 'back1.jpg' %}") no-repeat;
-        width: 100%;
-        height: 100vh;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-      }
+    .img {
+      background: url("{% static 'Back.jpg' %}") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-      .img::before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.4);
-      }
+    .img::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
 
-      .center {
-        position: absolute;
-        top: 52%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        padding: 0 20px;
-        text-align: center;
-      }
+    .center {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      color: #fff;
+    }
 
-      .center .title {
-        color: #fff;
-        font-size: 55px;
-        font-weight: 600;
-      }
+    .center .title {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
 
-      .center .sub_title {
-        color: #fff;
-        font-size: 40px;
-        font-weight: 600;
-      }
+    .center .sub_title {
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
 
-      .center .para {
-        color: #fff;
-        font-size: 23px;
-        font-weight: 200;
-      }
+    .center .para {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
 
-      .center .btns {
-        margin-top: 20px;
-      }
+    .center .btns {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
 
-      .center .btns button {
-        height: 55px;
-        width: 170px;
-        border-radius: 10px;
-        border: none;
-        margin: 0 10px;
-        border: 2px solid white;
-        font-size: 20px;
-        font-weight: 500;
-        padding: 0 10px;
-        cursor: pointer;
-        outline: none;
-        transition: all 0.3s ease;
-      }
+    .center .btns a {
+      display: inline-block;
+      padding: 15px 30px;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-      .center .btns button:first-child {
-        color: #fff;
-        background: none;
-      }
+    .center .btns a:hover {
+      background: #fff;
+      color: black;
+    }
 
-      .btns button:first-child:hover {
-        background: white;
-        color: black;
-      }
+    footer {
+    background: transparent;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }
 
-      footer {
-        background-color: transparent;
-        color: #34e906;
-        text-align: center;
-        padding: 10px;
-        bottom: 0;
-        width: 100%;
-      }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
-    <nav>
-      <div class="menu">
-        <a href="#"><img src="{% static '/Favi2.png' %}" height="150px" width="150px"></a>
-        <div class="logo">
-          <a href="#">Fit Quest Hub</a>
-        </div>
-        <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="SignIn/"><i class="fa fa-sign-in"></i> Login</a></li>
-        </ul>
+  .social-icons {
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    font-size: 25px;
+    color:rgb(255, 102, 0);
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #fff;
+  }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <nav>
+    <div class="menu">
+      <a href="#"><img src="{% static 'Favi2.png' %}" height="50px" width="50px"></a>
+      <div class="logo">
+        <a href="#">Fitness Hub</a>
       </div>
-    </nav>
-    <div class="img"></div>
+      <ul>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="SignIn/"><i class="fa fa-sign-in"></i> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img">
     <div class="center">
-      <div class="title">Your Ultimate Fitness Challenge Destination</div>
-      <div class="sub_title">“Push harder than yesterday if you want a different tomorrow.” - Vincent Williams Sr.</div>
-      <div class="para">Join our challenges and embark on a journey to improve your fitness and well-being.</div>
+      <div class="title">Welcome to Fitness Hub</div>
+      <div class="sub_title">Transform your body, mind, and spirit</div>
+      <div class="para">Join our exciting challenges to achieve your fitness goals and discover a healthier, happier you.</div>
       <div class="btns">
-        <button>
-          <a href="Challenges/" style="text-decoration: none; color: #fa9e00;">
-            <i class="fa fa-trophy"></i> Challenges
-          </a>
-        </button>
+        <a href="Challenges/"><i class="fa fa-trophy"></i> Explore Challenges</a>
+        <a href="SignUp/"><i class="fa fa-user-plus"></i> Get Started</a>
       </div>
     </div>
-    <footer>
-      <nav>
-        <a>Contact The Creator</a>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/rubesh-k-k-887b33280" target="_blank"><i class="fa fa-linkedin"></i></a>
-          <a href="https://instagram.com/___rubesh___?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"><i class="fa fa-instagram"></i></a>
-        </div>
-      </nav>
-    </footer>
-  </body>
+  </div>
+  <footer>
+    <div>Contact The Creator</div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/rubesh-k-k-887b33280" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+      <a href="https://instagram.com/___rubesh___?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"><i class="fa fa-instagram"></i></a>
+    </div>
+  </footer>
+</body>
 </html>
