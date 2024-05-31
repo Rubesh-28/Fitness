@@ -6,12 +6,12 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.urls import reverse
 
-# Create your views here.
 def Home(request):
     return render(request, 'Home.html')
 
 def Challenges(request):
-    return render(request, 'Challenges.html')
+    username = request.session.get('username', None)
+    return render(request, 'Challenges.html', {'username': username})
 
 def SignUp(request):
     return render(request, 'SignUp.html')
@@ -32,7 +32,6 @@ def CreateUser(request):
             messages.error(request, "All fields are required.")
             return redirect('SignUp')
 
-        # You should hash the password before saving it
         user = Registration(full_name=name, username=uname, email=email, phone_number=phone, gender=gender, password=password)
         user.save()
         return HttpResponseRedirect(reverse('SignIn'))
@@ -51,7 +50,7 @@ def Login(request):
         try:
             user = Registration.objects.get(username=username)
             if user.password == password:
-                # Redirect to the 'challenges' page after successful authentication
+                request.session['user_id'] = user.id
                 return redirect('Challenges')
             else:
                 messages.error(request, "Wrong password.")
