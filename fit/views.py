@@ -1,8 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.template import loader
 from fit.models import Registration
-from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.urls import reverse
 
@@ -50,7 +48,7 @@ def Login(request):
         try:
             user = Registration.objects.get(username=username)
             if user.password == password:
-                request.session['user_id'] = user.id
+                request.session['username'] = username
                 return redirect('Challenges')
             else:
                 messages.error(request, "Wrong password.")
